@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aeffspringmicrodemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aeffspringmicrodemo
+  template:
+    metadata:
+      labels:
+        app: aeffspringmicrodemo 
+    spec:
+      containers:
+        - name: aeffspringmicrodemo 
+          image: springmicrodemo.azurecr.io/aeffspringmicrodemo
+          ports:
+          - containerPort: 8080
